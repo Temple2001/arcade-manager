@@ -56,8 +56,8 @@ class YoutubeAPI:
 
             start_time_utc = res_json['items'][0]['snippet']['publishedAt']
 
-            start_time_kst = datetime.strptime(start_time_utc, '%Y-%m-%dT%H:%M:%SZ') + timedelta(hours=9)
-            progress_time = str(datetime.now() - start_time_kst).split('.', 2)[0]
+            start_time_utc = datetime.strptime(start_time_utc, '%Y-%m-%dT%H:%M:%SZ')
+            progress_time = str(datetime.now() - start_time_utc).split('.', 2)[0]
             return progress_time, None
         except:
             print(f'[Error] API 호출 에러\n{traceback.format_exc()}')
