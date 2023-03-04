@@ -2,6 +2,10 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from db_api import MongoDB_API
 
+# 패키지 설치
+# pip install Flask
+# pip install Flask-Cors
+
 app = Flask(__name__)
 CORS(app, resources={r'*':{'origins': 'http://localhost:3000'}})
 #app.debug = True

@@ -5,6 +5,10 @@ from discord.ext import commands
 from youtube_api import YoutubeAPI
 from db_api import MongoDB_API
 
+# 패키지 설치
+# pip install discord.py
+# pip install python-dotenv
+
 search_keyword = {
     '사볼(일반)': 'AmuseTown+SoundVoltex+Live+stream',
     '사볼(발키리)': 'AmuseTown+SDVX+Valkyrie+model+Live+stream',

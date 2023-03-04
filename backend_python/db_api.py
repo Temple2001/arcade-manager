@@ -2,6 +2,9 @@ from pymongo import MongoClient
 import datetime
 import traceback
 
+# 패키지 설치
+# pip install pymongo
+
 class MongoDB_API:
     def __init__(self):
         self.client = MongoClient(host='localhost', port=27017)
