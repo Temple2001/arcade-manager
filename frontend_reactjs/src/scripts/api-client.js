@@ -2,10 +2,10 @@ const axios = require('axios');
 
 const day = ['일', '월', '화', '수', '목', '금', '토'];
 
-class ApiClient {
+export default class ApiClient {
     constructor() {
         const client = axios.create({
-            baseURL: 'http://localhost:5000',
+            baseURL: 'http://arcade.templ.es:5000/',
         });
         client.interceptors.response.use((resp) => {
             return resp.data;
@@ -31,11 +31,3 @@ class ApiClient {
         return response;
     }
 }
-
-async function main() {
-    const api_client = new ApiClient();
-    const res = await api_client.getData();
-    console.log(res);
-}
-
-module.exports = ApiClient;

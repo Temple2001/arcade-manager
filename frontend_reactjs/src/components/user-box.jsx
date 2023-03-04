@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { YoutubeOutlined } from '@ant-design/icons';
 import { Divider, Card } from 'antd';
+import chunithm from '../assets/images/chunithm.png'
+import maimai from '../assets/images/maimai.png'
+import manual from '../assets/images/manual.png'
+import sdvx from '../assets/images/sdvx.png'
 const { Meta } = Card;
 
 const Container = styled.div`
@@ -35,11 +39,11 @@ const Cover = styled.img`
 `
 
 const coverImg = {
-    '수동 기록됨': 'https://cdn-icons-png.flaticon.com/512/900/900797.png',
-    '사볼 (발키리기체)': 'http://webimage.uniana.com/sv2021/images/menu/logo.png',
-    '사볼 (일반기체)': 'http://webimage.uniana.com/sv2021/images/menu/logo.png',
-    '츄니즘': 'https://chunithm.sega.com/assets/img/top/kv_logo.png',
-    '마이마이': 'https://www.facebook.com/photo/?fbid=488760479461996&set=a.488760442795333',
+    '수동 기록됨': manual,
+    '사볼 (발키리기체)': sdvx,
+    '사볼 (일반기체)': sdvx,
+    '츄니즘': chunithm,
+    '마이마이': maimai,
 }
 
 function toSeconds(str) {
@@ -54,7 +58,7 @@ export default function UserBox({ userId, userLogs }) {
                 {userId}
             </Divider>
             <Line>
-                {userLogs.map((log, index) => (
+                {userLogs.reverse().map((log, index) => (
                     <LogCard
                         key={index}
                         cover={

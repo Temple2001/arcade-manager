@@ -43,21 +43,22 @@ class Menu(discord.ui.View):
         user = self.ctx.message.author
 
         if v_id == None:
-            await interaction.response.edit_message(content=error_msg)
+            await self.ctx.send(error_msg)
         else:
             progress_time, error_msg = yt_api.time_check(v_id)
 
             if progress_time == None:
-                await interaction.response.edit_message(content=error_msg)
+                await self.ctx.send(error_msg)
             else:
                 error_msg = db_api.add_log(user.name, v_id, progress_time, '사볼 (일반기체)')
 
                 if error_msg != None:
-                    await interaction.response.edit_message(content=error_msg)
+                    await self.ctx.send(error_msg)
                 else:
-                    await interaction.response.edit_message(content=f'[OK] **사볼 (일반기체)** 기록되었습니다. 영상 내 시작 시간 : {progress_time}')
+                    await self.ctx.send(f'[OK] **사볼 (일반기체)** 기록되었습니다. 영상 내 시작 시간 : {progress_time}')
                     
         self.clear_items()
+        await interaction.response.edit_message(view=self)
     
     @discord.ui.button(label='사볼(발키리)', style=discord.ButtonStyle.blurple)
     async def menu2(self, interaction:discord.Interaction, button:discord.ui.Button):
@@ -65,21 +66,22 @@ class Menu(discord.ui.View):
         user = self.ctx.message.author
 
         if v_id == None:
-            await interaction.response.edit_message(content=error_msg)
+            await self.ctx.send(error_msg)
         else:
             progress_time, error_msg = yt_api.time_check(v_id)
 
             if progress_time == None:
-                await interaction.response.edit_message(content=error_msg)
+                await self.ctx.send(error_msg)
             else:
                 error_msg = db_api.add_log(user.name, v_id, progress_time, '사볼 (발키리기체)')
 
                 if error_msg != None:
-                    await interaction.response.edit_message(content=error_msg)
+                    await self.ctx.send(error_msg)
                 else:
-                    await interaction.response.edit_message(content=f'[OK] **사볼 (발키리기체)** 기록되었습니다. 영상 내 시작 시간 : {progress_time}')
+                    await self.ctx.send(f'[OK] **사볼 (발키리기체)** 기록되었습니다. 영상 내 시작 시간 : {progress_time}')
 
         self.clear_items()
+        await interaction.response.edit_message(view=self)
     
     @discord.ui.button(label='츄니즘', style=discord.ButtonStyle.blurple)
     async def menu3(self, interaction:discord.Interaction, button:discord.ui.Button):
@@ -87,21 +89,22 @@ class Menu(discord.ui.View):
         user = self.ctx.message.author
 
         if v_id == None:
-            await interaction.response.edit_message(content=error_msg)
+            await self.ctx.send(error_msg)
         else:
             progress_time, error_msg = yt_api.time_check(v_id)
 
             if progress_time == None:
-                await interaction.response.edit_message(content=error_msg)
+                await self.ctx.send(error_msg)
             else:
                 error_msg = db_api.add_log(user.name, v_id, progress_time, '츄니즘')
 
                 if error_msg != None:
-                    await interaction.response.edit_message(content=error_msg)
+                    await self.ctx.send(error_msg)
                 else:
-                    await interaction.response.edit_message(content=f'[OK] **츄니즘** 기록되었습니다. 영상 내 시작 시간 : {progress_time}')
+                    await self.ctx.send(f'[OK] **츄니즘** 기록되었습니다. 영상 내 시작 시간 : {progress_time}')
 
         self.clear_items()
+        await interaction.response.edit_message(view=self)
 
     @discord.ui.button(label='마이마이', style=discord.ButtonStyle.blurple)
     async def menu4(self, interaction:discord.Interaction, button:discord.ui.Button):
@@ -109,21 +112,22 @@ class Menu(discord.ui.View):
         user = self.ctx.message.author
 
         if v_id == None:
-            await interaction.response.edit_message(content=error_msg)
+            await self.ctx.send(error_msg)
         else:
             progress_time, error_msg = yt_api.time_check(v_id)
         
             if progress_time == None:
-                await interaction.response.edit_message(content=error_msg)
+                await self.ctx.send(error_msg)
             else:
                 error_msg = db_api.add_log(user.name, v_id, progress_time, '마이마이')
 
                 if error_msg != None:
-                    await interaction.response.edit_message(content=error_msg)
+                    await self.ctx.send(error_msg)
                 else:
-                    await interaction.response.edit_message(content=f'[OK] **마이마이** 기록되었습니다. 영상 내 시작 시간 : {progress_time}')
+                    await self.ctx.send(f'[OK] **마이마이** 기록되었습니다. 영상 내 시작 시간 : {progress_time}')
 
         self.clear_items()
+        await interaction.response.edit_message(view=self)
 
 
 # 인사 명령어

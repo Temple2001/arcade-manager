@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import MainContent from './main-content';
 import MainMenu from './main-menu';
-const ApiClient = require('../scripts/api-client');
+import ApiClient from '../scripts/api-client';
 const client = new ApiClient();
 
 const TopBackground = styled.div`

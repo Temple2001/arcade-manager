@@ -33,6 +33,7 @@ class YoutubeAPI:
         for video in search_list:
             if video['snippet']['liveBroadcastContent'] == 'live':
                 return video['id']['videoId'], None
+        return None, '[Failed] 해당 생방송 video를 찾지 못했습니다.'
             
     def url_parse(self, url):
         try:

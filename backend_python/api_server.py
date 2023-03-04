@@ -7,7 +7,7 @@ from db_api import MongoDB_API
 # pip install Flask-Cors
 
 app = Flask(__name__)
-CORS(app, resources={r'*':{'origins': 'http://localhost:3000'}})
+CORS(app, resources={r'*':{'origins': '*' }})
 #app.debug = True
 app.config['JSON_AS_ASCII'] = False
 db_api = MongoDB_API()
@@ -31,4 +31,4 @@ def main_page():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')
