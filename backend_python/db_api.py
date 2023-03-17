@@ -1,13 +1,17 @@
 from pymongo import MongoClient
 import datetime
 import traceback
+from dotenv import load_dotenv
+import os
 
 # 패키지 설치
 # pip install pymongo
 
 class MongoDB_API:
     def __init__(self):
-        self.client = MongoClient(host='localhost', port=27017)
+        load_dotenv(verbose=True)
+        self.MONGO_PWD = os.getenv('MONGO_PWD')
+        self.client = MongoClient(f'mongodb://temple:{self.MONGO_PWD}@localhost:27017/ArcadeData')
         self.log_db = self.client['ArcadeData']['log']
 
     def add_log(self, user_name, v_id, progress_time, arcade_type):
