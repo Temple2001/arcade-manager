@@ -13,12 +13,12 @@ const TopBackground = styled.div`
         rgba(255, 255, 255, 0.7) 95%,
         rgba(255, 255, 255, 1) 100%
     ),
-    URL(https://eacache.s.konaminet.jp/game/sdvx/vi/images/top/main_sp.jpg);
+    URL(https://pbs.twimg.com/media/FpIvPWNaQAAziku?format=jpg&name=large);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 50% 35%;
+    background-position: 50% 43%;
     opacity: 0.6;
-    filter: blur(2px);
+    filter: blur(1px);
     width: 100%;
     height: 300px;
 `
