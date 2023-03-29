@@ -18,7 +18,7 @@ const TopBackground = styled.div`
     background-size: cover;
     background-position: 50% 43%;
     opacity: 0.6;
-    filter: blur(1px);
+    filter: blur(3px);
     width: 100%;
     height: 300px;
 `
